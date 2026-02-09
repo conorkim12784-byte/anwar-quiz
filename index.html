@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#c5a059" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2874/2874311.png" />
+    
+    <title>مسابقة الأنوار الإسلامية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --gold-light: #fcf6e5;
+        --gold-royal: #c5a059;
+        --gold-dark: #8e6d31;
+        --deep-night: #1a1a1a;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: var(--deep-night);
+        font-family: 'Tajawal', sans-serif;
+      }
+      .font-amiri { font-family: 'Amiri', serif; }
+      
+      /* استخدام الصورة المرفقة كخلفية ثابتة وكاملة */
+      .bg-app {
+        background-image: url('https://r.jina.ai/i/6f9035678da44766be15e197d195f419');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+
+      /* تحريكات عائمة */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-float { animation: float 5s ease-in-out infinite; }
+
+      /* بطاقة زجاجية ذهبية تتناسب مع الخلفية */
+      .glass-card {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(197, 160, 89, 0.3);
+        box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4);
+      }
+
+      /* زر بلمعان ذهبي ملكي */
+      .gold-btn {
+        background: linear-gradient(135deg, var(--gold-royal) 0%, var(--gold-dark) 100%);
+        color: white;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px -5px rgba(142, 109, 49, 0.4);
+      }
+      .gold-btn::after {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+        transform: rotate(45deg);
+        animation: btnShimmer 3s infinite;
+      }
+      @keyframes btnShimmer {
+        0% { transform: translate(-100%, -100%) rotate(45deg); }
+        100% { transform: translate(100%, 100%) rotate(45deg); }
+      }
+
+      .scrollbar-hide::-webkit-scrollbar { display: none; }
+      .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+      .timer-bar {
+        background: linear-gradient(90deg, var(--gold-royal), var(--gold-dark));
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-app">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

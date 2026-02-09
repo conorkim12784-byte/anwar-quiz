@@ -1,0 +1,25 @@
+
+{
+  "name": "مسابقة الأنوار الإسلامية",
+  "short_name": "الأنوار",
+  "description": "مسابقة إسلامية تفاعلية بالذكاء الاصطناعي",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#f0f4f0",
+  "theme_color": "#065f46",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2874/2874311.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/2874/2874311.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
